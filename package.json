@@ -1,0 +1,47 @@
+{
+  "name": "modern-doc-app",
+  "version": "0.1.0",
+  "scripts": {
+    "reset": "npx rimraf ./**/node_modules",
+    "dev": "modern dev",
+    "build": "modern build",
+    "start": "modern start",
+    "serve": "modern serve",
+    "new": "modern new",
+    "lint": "modern lint",
+    "prepare": "husky install",
+    "upgrade": "modern upgrade"
+  },
+  "engines": {
+    "node": ">=16.18.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ],
+    "*.{js,jsx,mjs,mjsx,cjs,cjsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ]
+  },
+  "dependencies": {
+    "@modern-js/runtime": "2.8.0",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0"
+  },
+  "devDependencies": {
+    "@modern-js-app/eslint-config": "2.8.0",
+    "@modern-js/app-tools": "2.8.0",
+    "@modern-js/doc-tools": "^2.8.0",
+    "@modern-js/eslint-config": "2.8.0",
+    "@modern-js/tsconfig": "2.8.0",
+    "@types/jest": "~29.4.1",
+    "@types/node": "~18.15.3",
+    "@types/react": "~18.0.28",
+    "@types/react-dom": "~18.0.11",
+    "husky": "~8.0.3",
+    "lint-staged": "~13.2.0",
+    "prettier": "~2.8.4",
+    "rimraf": "~4.4.0",
+    "typescript": "~4.9.5"
+  }
+}
